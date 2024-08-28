@@ -47,7 +47,7 @@ const SaveStudent = asyncHandler(async(req,res)=>{
     //     throw new ApiError(500,"Something went wrong while register Student");
     // }
 
-    return res.status(200).json(new ApiResponse(200,UpdateInDB,"Successfuly Register"));
+    return res.status(200).json(new ApiResponse(200,Data,"Successfuly Register"));
 });
 
 export {
