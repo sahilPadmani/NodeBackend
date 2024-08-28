@@ -24,12 +24,14 @@ app.use(cookieParser());
 import EventRouter from "./routes/event.route.js";
 import EventHandlerRouter from "./routes/eventhandler.route.js";
 import StudentRouter from "./routes/student.route.js";
+import GroupRouter from "./routes/group.route.js";
 
 const apiRouter = express.Router();
 
 apiRouter.use("/event",EventRouter);
 apiRouter.use("/eventhandler",EventHandlerRouter)
 apiRouter.use("/student",StudentRouter);
+apiRouter.use("/group",GroupRouter);
 
 app.use("/eventx/api",apiRouter);
 

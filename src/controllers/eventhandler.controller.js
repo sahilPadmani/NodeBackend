@@ -3,8 +3,6 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { EventHandler } from "../model/EventHandler.model.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { Student } from "../model/Student.model.js";
-import { request } from "express";
-import mongoose from "mongoose";
 
 const GetEventHandlerByGmail = asyncHandler(async(req,res)=>{
     const {GmailId} = req.body;

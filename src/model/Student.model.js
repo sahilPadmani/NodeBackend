@@ -4,15 +4,15 @@ const studentSchema = new Schema(
     {
         Name:{
             type:String,
-            require:true,
-            lowecase : true,
+            required:true,
+            lowercase : true,
             trim : true
         },
         GmailId:{
             type:String,
-            require:true,
+            required:true,
             unique : true,
-            lowecase : true,
+            lowercase : true,
             trim : true,
             index :true
         },
@@ -34,7 +34,7 @@ const studentSchema = new Schema(
         }
     },
     {
-        timeseries : true
+        timestamps : true
     }
 );
 

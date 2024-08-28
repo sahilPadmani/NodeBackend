@@ -4,38 +4,38 @@ const eventSchema = new Schema(
     {
         Name:{
             type : String,
-            require :true,
-            lowecase : true,
+            required :true,
+            lowercase : true,
             trim : true,
             index : true
         },
         Location:{
             type:String,
-            require:true,
-            lowecase : true,
+            required:true,
+            lowercase : true,
             trim : true
         },
         TimeLimit:{
             type:Number, // <-- in Day 1d like 
-            require:true,
-            lowecase:true,
+            required:true,
+            lowercase:true,
             trim:true,
         },
         Time:{
             type:String,
-            require:true,
-            lowecase : true,
+            required:true,
+            lowercase : true,
             trim : true,
         },
         Date:{
             type:String,
-            require:true,
-            lowecase : true,
+            required:true,
+            lowercase : true,
             trim : true
         },
         NumberOfTeam:{
             type:Number,
-            require:true
+            required:true
         },
         EventHandlerId:{
             type : Schema.Types.ObjectId,
@@ -43,7 +43,7 @@ const eventSchema = new Schema(
         }
     },
     {
-        timeseries : true
+        timestamps : true
     }
 );
 

@@ -5,14 +5,18 @@ const groupSchema = new Schema(
         Name:{
             type:String,
             unique:true,
-            require:true,
-            lowecase:true,
+            required:true,
+            lowercase:true,
             trim : true,
             index :true
         },
         EventId:{
             type : Schema.Types.ObjectId ,
             ref  : "Event"
+        },
+        Present:{
+            type:Boolean,
+            default:false
         },
         AllStudent:[
             {
@@ -22,7 +26,7 @@ const groupSchema = new Schema(
         ]
     },
     {
-        timeseries : true
+        timestamps : true
     }
 );
 export const Group = mongoose.model("Group",groupSchema);
