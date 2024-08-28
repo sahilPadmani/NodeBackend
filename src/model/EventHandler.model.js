@@ -32,9 +32,6 @@ const eventhandlerSchema = new Schema(
                 ref : "Event"
             }
         ]
-    },
-    {
-        timestamps : true
     }
 );
 

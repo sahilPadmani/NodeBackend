@@ -18,27 +18,24 @@ const GetAllEvent = asyncHandler(async(req,res)=>{
 });
 
 const SaveEvent = asyncHandler(async(req,res)=>{
-    const {GmailId,Name,Location,TimeLimit,Time,Date,NumberOfTeam} = req.body;
+    const {_id,Name,Location,TimeLimit,Time,Date,NumberOfTeam} = req.body;
 
-    if([GmailId,Name,Location,TimeLimit,Time,Date,NumberOfTeam].some((element) => element?.trim() === "")){
+
+    if([_id,Name,Location,TimeLimit,Time,Date,NumberOfTeam].some((element) => element?.trim() === "")){
         throw new ApiError(400 , "Data not Present");
     }
 
-    const eventhandlerid = await EventHandler.findOne({GmailId:GmailId});
-
-    if(!eventhandlerid){
-        throw new ApiError(404,"Handler Gmail not Found");
-    }
-
     const newevent = await Event.create({
-        Name,
-        Location,
-        Time,
-        Date,
-        NumberOfTeam,
-        TimeLimit,
-        EventHandlerId:eventhandlerid._id
+        Name:Name,
+        Location:Location,
+        Time:Time,
+        Date:Date,
+        NumberOfTeam:NumberOfTeam,
+        TimeLimit:TimeLimit,
+        EventHandlerId:_id
     });
+
+    const eventhandlerid = await EventHandler.findById(_id);
 
     eventhandlerid.AllEvent.push(newevent);
 

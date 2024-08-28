@@ -24,9 +24,6 @@ const groupSchema = new Schema(
                 ref : "Student"
             }
         ]
-    },
-    {
-        timestamps : true
     }
 );
 export const Group = mongoose.model("Group",groupSchema);
